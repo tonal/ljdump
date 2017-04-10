@@ -284,9 +284,10 @@ def ljdump(Server, Username, Password, Journal):
     newmaxid = maxid
     maxid = lastmaxid
     while True:
-        maxid = minid(metacache, maxid) - 1 # has to be minus one because the rest assumes plus one
+        maxid = minid(metacache, maxid)
         if maxid == lastmaxid:
             break #no more ids in the metacache
+        maxid = maxid - 1 # has to be minus one because the rest assumes plus one
 
         try:
             try:
